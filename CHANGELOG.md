@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-09-10 — Pilot revision protocol v0.2 added
+
+### Review corrections requested
+
+- correct the Uniform reconstruction trend from "steady/monotonic improvement" to "overall improvement with a small K=3 -> K=4 reversal";
+- stop treating `relative_frobenius_error` and `nrmse_energy` as independent metrics, because they are algebraically identical under the present normalization;
+- qualify the so-called full-range reconstruction error as an error over supported positions within the 4,149-position common-valid target domain, with support/unsupported fractions reported alongside it;
+- preserve the Route 2 decision unless these corrections reveal a material implementation error.
+
+See `protocols/pilot_revision_protocol_v0.2.md`.
+
 ## 2026-09-10 — Reconstruction pilot executed
 
 ### Added
