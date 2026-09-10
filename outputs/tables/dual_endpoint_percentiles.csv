@@ -1,0 +1,3 @@
+configuration_id,K,selected_ex,structural_rho_percentile,minimum_rho_percentile,coverage_percentile,reconstruction_error_best_percentile,spectral_cosine_percentile
+Uniform-4,4,300;435;565;700,64.8,78.2,100.0,38.2,34.0
+Uniform-6,6,300;380;460;540;620;700,55.800000000000004,36.0,54.2,69.6,57.8

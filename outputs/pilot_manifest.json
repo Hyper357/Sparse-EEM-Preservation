@@ -63,5 +63,5 @@
   "selection_source": "03_ANALYSIS/measured_verified/selected_excitation_sets_by_fold.csv",
   "rho_source": "03_ANALYSIS/measured_verified/site_structure_preservation.csv",
   "reconstruction": "piecewise linear along EX with nearest-edge extension; one-support constant; zero-support missing; no random process; seed not applicable",
-  "generated_utc": "2026-09-10T09:34:26.325956+00:00"
+  "generated_utc": "2026-09-10T09:48:12.039218+00:00"
 }

@@ -1,0 +1,9 @@
+random_seed: 42
+random_configurations: 500
+minimum_spacing_nm: 20
+fixed_uniform:
+  Uniform-2: [300, 700]
+  Uniform-3: [300, 500, 700]
+  Uniform-4: [300, 435, 565, 700]
+  Uniform-6: [300, 380, 460, 540, 620, 700]
+  Uniform-8: [300, 355, 415, 470, 530, 585, 645, 700]

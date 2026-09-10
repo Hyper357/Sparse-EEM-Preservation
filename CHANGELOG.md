@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-10 — Fixed EX dual-endpoint analysis completed
+
+### Added
+
+- fixed Uniform-2/3/4/6/8 configuration summaries and V5-consistent rho verification;
+- 500 seed-42 feasible random fixed combinations for K=4 and K=6, percentile comparisons, Pareto fronts, four-quadrant discordance table, and P6–P10 figures;
+- dual-endpoint report recommending parallel retention of Uniform-4 and Uniform-6 for the next EX–EM discretisation validation.
+
+No fixed NAIG optimum was inferred; NAIG remains fold-specific.
+
 ## 2026-09-10 — Pilot revision v0.2 completed
 
 ### Corrections
