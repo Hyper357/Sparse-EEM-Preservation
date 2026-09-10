@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-09-10 — Reconstruction pilot executed
+
+### Added
+
+- deterministic NAIG and V5-defined Uniform full-EEM reconstruction pilot for K = 2, 3, 4, 6, and 8 across 29 verified main scans;
+- common-mask-aware interpolation, nearest-edge extension, explicit single/unsupported support accounting, and edge diagnostics;
+- per-site joint reconstruction/structure table, complete distribution summaries, five figure sets in 300-dpi PNG/PDF/SVG, tests, provenance, and decision report.
+
+### Decision
+
+Route 2: retain V5 structural rho as the primary endpoint and reconstruction as supplementary validation. V5/V6 manuscript text was not modified.
+
 ## 2026-09-10 — Methodology v0.1
 
 Initial repository structure established for sparse-excitation EEM preservation analysis.

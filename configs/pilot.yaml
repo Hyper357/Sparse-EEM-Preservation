@@ -1,0 +1,5 @@
+data: verified_v5_measured
+strategies: [NAIG, Uniform]
+K: [2, 3, 4, 6, 8]
+reconstruction: piecewise_linear_ex_axis_nearest_edge
+random_seed: null

@@ -1,6 +1,6 @@
 # src
 
-This directory is reserved for implementation code after the reconstruction pilot specification is accepted.
+This directory contains the implementation for the completed reconstruction pilot. Run `python src/reconstruction_pilot.py --config configs/pilot.yaml` from the repository root to regenerate all derived tables and figures. The loader reads verified V5 inputs one directory above this repository and stores no raw EEM data here.
 
 ## Implementation rules
 

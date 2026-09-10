@@ -81,6 +81,4 @@ Task-specific algae classification or quantification requires separate labeled v
 
 ## Status
 
-**Method definition only. No reconstruction results have been computed in this repository yet.**
-
-The next step is a separated pilot analysis before any decision is made about promoting reconstruction to the primary manuscript endpoint.
+The isolated reconstruction pilot has been executed for NAIG and V5-defined Uniform at K = 2, 3, 4, 6, and 8 using 29 verified main scans. Reproducible code is in `src/`, tables and 300-dpi/vector figures are in `outputs/`, and the interpretation is documented in `reports/reconstruction_pilot_report.md`. The pilot recommends retaining V5 structural rho as primary and reconstruction as supplementary; no V5/V6 manuscript text was changed.
