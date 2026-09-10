@@ -1,0 +1,23 @@
+{
+  "input": "C:\\Users\\ZHAOLJ\\Desktop\\\u73af\u6d77\u6570\u636e\u6210\u679c\u8f6c\u5316-\u8bba\u6587\\01_DATA\\measured_verified\\eem_measured.npz",
+  "input_sha256": "c171e06edbc4223dc5c9a7e9a65287d75633c7b175640044625d634534252a18",
+  "selection_source": "C:\\Users\\ZHAOLJ\\Desktop\\\u73af\u6d77\u6570\u636e\u6210\u679c\u8f6c\u5316-\u8bba\u6587\\03_ANALYSIS\\measured_verified\\selected_excitation_sets_by_fold.csv",
+  "rho_source": "C:\\Users\\ZHAOLJ\\Desktop\\\u73af\u6d77\u6570\u636e\u6210\u679c\u8f6c\u5316-\u8bba\u6587\\03_ANALYSIS\\measured_verified\\site_structure_preservation.csv",
+  "reconstruction": "piecewise linear along EX; nearest-edge extension; invalid mask restored missing",
+  "strategies": [
+    "NAIG",
+    "Uniform"
+  ],
+  "K": [
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "n_sites": 29,
+  "outputs": [
+    "pilot_per_site.csv",
+    "pilot_summary.csv"
+  ]
+}

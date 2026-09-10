@@ -69,7 +69,7 @@ Pilot 首先采用 **沿 EX 轴的分段线性插值**。
 至少报告：
 
 - Relative Frobenius Error；
-- NRMSE；
+- `relative_frobenius_error_supported_full_domain`；
 - spectral cosine similarity 或 spectral angle。
 
 具体定义见 `reconstruction_metrics.md`。
@@ -124,7 +124,7 @@ Pilot 首先采用 **沿 EX 轴的分段线性插值**。
 - threshold coverage（只有在阈值有明确预注册含义时使用）；
 - 与 structural-preservation endpoint 的对应关系。
 
-推荐增加 reconstruction 与 structural preservation 的散点图：
+NRMSE_energy 仅作为与 relative Frobenius error 的实现等价性核验，不作为独立 publication-facing 指标。推荐增加 reconstruction 与 structural preservation 的散点图：
 
 `x = reconstruction fidelity`
 

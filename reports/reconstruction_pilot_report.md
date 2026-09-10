@@ -16,11 +16,11 @@ The full-range target domain contains all 4,149 common-valid EX–EM positions. 
 
 ### Q1 — Can a few EX recover the full EEM?
 
-Partially, under this transparent baseline. At K=2 the median full-range relative Frobenius error was 0.245 for NAIG and 0.274 for Uniform; median full-range spectral cosine similarity was 0.970 and 0.964, respectively. These are useful spectral-shape similarities but not evidence that an equivalent percentage of EEM information was recovered. Worst-site errors remained high (0.778 NAIG; 0.662 Uniform at K=2).
+Partially, under this transparent baseline. At K=2 the median supported-position relative Frobenius error within the full common-valid domain was 0.245 for NAIG and 0.274 for Uniform; median supported-position spectral cosine similarity was 0.970 and 0.964, respectively. These are useful spectral-shape similarities but not evidence that an equivalent percentage of EEM information was recovered. Worst-site errors remained high (0.778 NAIG; 0.662 Uniform at K=2).
 
 ### Q2 — What changes with K?
 
-Uniform improves steadily in full-range error (median 0.274 → 0.192 from K=2 → 8) and cosine similarity (0.964 → 0.982). NAIG does not improve monotonically: median error is 0.245, 0.246, 0.246, 0.271, and 0.261 for K=2,3,4,6,8; median cosine is 0.970, 0.970, 0.972, 0.968, and 0.970. Thus increasing K is beneficial for Uniform in this baseline, but not a stable error improvement for NAIG.
+Uniform reconstruction shows an overall improvement as excitation budget increases, but the trend is not strictly monotonic. Its median supported-position relative Frobenius error is 0.2738578661, 0.2572379139, 0.2637237504, 0.2198197509, and 0.1919923637 for K=2,3,4,6,8; median spectral cosine is 0.9642711187, 0.9709158933, 0.9680782170, 0.9759571782, and 0.9817267041. K=3 → K=4 therefore shows a small reversal. NAIG does not improve monotonically: median error is 0.245, 0.246, 0.246, 0.271, and 0.261 for K=2,3,4,6,8.
 
 ### Q3 — Does 4–6 EX have candidate-budget meaning?
 
@@ -36,7 +36,7 @@ No. Across site/configuration rows, error–rho Spearman correlations range from
 
 ### Q6 — High structure but poorer EEM recovery?
 
-Yes. A clear example is S21, NAIG K=3: rho = 0.957 while full-range relative Frobenius error = 0.685 and cosine similarity = 0.771. Other high-rho/poor-reconstruction examples include S06 NAIG K=8 (rho 0.969, error 0.652) and S21 Uniform K=4 (rho 0.979, error 0.640). Mathematically, a sparse representation can preserve pairwise distance ordering while missing substantial pointwise variation; no chemical attribution is made here.
+Yes. A clear example is S21, NAIG K=3: rho = 0.957 while supported-position relative Frobenius error within the full common-valid domain = 0.685 and cosine similarity = 0.771. Other high-rho/poor-reconstruction examples include S06 NAIG K=8 (rho 0.969, error 0.652) and S21 Uniform K=4 (rho 0.979, error 0.640). Mathematically, a sparse representation can preserve pairwise distance ordering while missing substantial pointwise variation; no chemical attribution is made here.
 
 ### Q7 — Full-range versus interpolation domain and edge effects
 
@@ -48,7 +48,9 @@ Uniform selected sets include both 300 and 700 nm at every tested K, so its full
 
 ## Summary statistics
 
-The complete 29-site distributions, including median, P10, worst, IQR, mean, P90, support fractions, and rho comparisons, are in `outputs/tables/reconstruction_summary.csv`. The site/configuration joint table is `outputs/tables/reconstruction_vs_structure.csv`.
+The complete 29-site distributions, including median, P10, worst, IQR, mean, P90, support fractions, and rho comparisons, are in `outputs/tables/reconstruction_summary.csv`. The publication-facing non-redundant summary is `outputs/tables/reconstruction_summary_publication.csv`; it omits NRMSE_energy and uses explicit supported-full-domain names. The site/configuration joint table is `outputs/tables/reconstruction_vs_structure.csv`.
+
+NRMSE_energy remains in the backward-compatible per-site and legacy summary outputs only as an implementation cross-check. Under the present normalization and identical support mask, it is algebraically identical to relative Frobenius error and is not an independent validation metric.
 
 ## Quality-control outcome
 

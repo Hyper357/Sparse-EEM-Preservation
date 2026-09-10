@@ -3,6 +3,12 @@ import pandas as pd
 
 
 def reconstruction_metrics(x, xhat, target_mask, support):
+    """Return metrics on supported targets plus explicit domain coverage.
+
+    ``nrmse_energy`` is retained as a backward-compatible implementation
+    cross-check. With the same supported positions and energy normalization,
+    it is algebraically identical to relative Frobenius error.
+    """
     target = target_mask.astype(bool)
     supported = target & np.isfinite(xhat)
     n = int(target.sum())

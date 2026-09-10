@@ -15,7 +15,7 @@
 - 对高强度区域更敏感；
 - 不能直接解释成“信息损失百分比”。
 
-## 2. NRMSE
+## 2. NRMSE (implementation cross-check only)
 
 先计算有效位置上的 RMSE：
 
@@ -26,11 +26,15 @@
 - `NRMSE_energy = RMSE / RMS(X)`
 - `NRMSE_range = RMSE / (max(X)-min(X))`
 
-主文最终只能选一种作为正式指标，另一种可用于 sensitivity analysis。对于不同强度尺度的天然水样，`NRMSE_energy` 通常更容易跨样本比较。
+在本 Pilot 中，RMSE、RMS(X) 与 RE_F 使用完全相同的 supported positions，因此：
+
+`NRMSE_energy = ||X_hat-X||_F / sqrt(n) / (||X||_F / sqrt(n)) = RE_F`
+
+Under the present normalization and identical support mask, `NRMSE_energy` is algebraically identical to relative Frobenius error and is retained only as an implementation cross-check. It is not an independent publication-facing validation metric. `NRMSE_range` is not used in this revision.
 
 ## 3. Spectral cosine similarity
 
-将有效 mask 中的 EEM 展平为向量：
+将 supported positions within the full common-valid EEM domain 中的 EEM 展平为向量：
 
 `x = vec(X_Omega)`
 
@@ -63,9 +67,9 @@
 
 Pilot 推荐：
 
-1. `Relative Frobenius Error` —— 数值误差；
-2. `Spectral cosine similarity` —— 整体谱形相似性；
-3. V5 的 `Spearman distance-ranking rho` —— 样本关系结构保持。
+1. `relative_frobenius_error_supported_full_domain` —— supported positions 上的数值误差；
+2. `spectral_cosine_supported_full_domain` —— supported positions 上的整体谱形相似性；
+3. V5 的 `rho_structure` —— 样本关系结构保持。
 
 这三个指标分别回答：
 
@@ -73,9 +77,18 @@ Pilot 推荐：
 - 重建光谱形状像不像；
 - 样本间关系有没有被保留。
 
-它们不可互相替代。
+RE_F 与 NRMSE_energy 不作为两个独立证据；前两项与 rho_structure 评价不同层次，不能互相替代。Publication-facing 表格使用 `reconstruction_summary_publication.csv` 的显式 domain-qualified 字段；旧字段保留在兼容性输出中。
 
-## 6. 不建议的做法
+## 6. Full-domain naming and support accounting
+
+The numerical metric mask is `target_mask & isfinite(X_hat)`. Therefore `relative_frobenius_error_supported_full_domain` and `spectral_cosine_supported_full_domain` mean reconstruction error or cosine similarity over supported positions within the full common-valid EEM domain. They do not mean every one of the 4,149 target positions received a reconstruction. Always report `reconstruction_supported_fraction_full_domain` and `unsupported_fraction_full_domain` alongside them. The publication table maps the legacy fields as follows:
+
+- `relative_frobenius_error_fullrange_*` → `relative_frobenius_error_supported_full_domain_*`;
+- `spectral_cosine_fullrange_*` → `spectral_cosine_supported_full_domain_*`;
+- `relative_frobenius_error_interpdomain_*` → `relative_frobenius_error_supported_interpolation_domain_*`;
+- `spectral_cosine_interpdomain_*` → `spectral_cosine_supported_interpolation_domain_*`.
+
+## 7. 不建议的做法
 
 - 不把 `1 - RE_F` 直接命名为“EEM 信息保留率”；
 - 不把 cosine similarity = 0.95 写成“95% EEM 信息被保留”；
@@ -83,7 +96,7 @@ Pilot 推荐：
 - 不在不同策略间使用不同重建器；
 - 不对物理排除区域进行插值后再参与误差计算。
 
-## 7. 汇总层级
+## 8. 汇总层级
 
 应同时保留：
 

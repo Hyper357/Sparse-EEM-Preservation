@@ -16,7 +16,7 @@ def main():
         ax[0, 1].plot(g.K, g.median_spectral_cosine_fullrange, "o-", label=strategy, color=colors[strategy])
         ax[1, 0].plot(g.K, g.p10_reconstruction_error_fullrange, "o--", label=f"{strategy} P10", color=colors[strategy])
         ax[1, 0].plot(g.K, g.worst_reconstruction_error_fullrange, "x:", label=f"{strategy} worst", color=colors[strategy])
-    ax[0, 0].set(title="P1. Full-range reconstruction error", ylabel="Relative Frobenius error")
+    ax[0, 0].set(title="P1. Supported-position error in full common-valid domain", ylabel="Relative Frobenius error")
     ax[0, 1].set(title="P2. Full-range spectral cosine", ylabel="Cosine similarity")
     ax[1, 0].set(title="P4. Low-end reconstruction error", ylabel="Relative Frobenius error")
     for a in (ax[0, 0], ax[0, 1], ax[1, 0]):

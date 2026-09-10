@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-10 — Pilot revision v0.2 completed
+
+### Corrections
+
+- corrected Uniform wording to “overall improvement ... not strictly monotonic” and preserved the K=3 → K=4 reversal;
+- retained NRMSE_energy only as an algebraic RE_F implementation cross-check, with allclose tests;
+- added publication-facing supported-full-domain metric names and a non-redundant summary table with explicit support fractions.
+
+Route 2, the 290-row result set, V5 rho, selected EX sets, reconstruction method, and site/mask scope remain unchanged.
+
 ## 2026-09-10 — Pilot revision protocol v0.2 added
 
 ### Review corrections requested

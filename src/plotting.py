@@ -27,7 +27,7 @@ def make_all(per_site, summary, figures_dir, representative=None):
     for st, g in summary.groupby('strategy'):
         c = COLORS[st]; ax.plot(g.K, g.relative_frobenius_error_fullrange_median, 'o-', color=c, label=st)
         ax.fill_between(g.K, g.relative_frobenius_error_fullrange_p10, g.relative_frobenius_error_fullrange_p90, color=c, alpha=.14)
-    ax.set(title='P1. Full-range reconstruction error', xlabel='Number of selected EX slices (K)', ylabel='Relative Frobenius error')
+    ax.set(title='P1. Supported-position error in full common-valid domain', xlabel='Number of selected EX slices (K)', ylabel='Relative Frobenius error')
     ax.legend(frameon=False, loc='upper right'); ax.set_xticks(KVALS); _style(ax); _save(fig, figures_dir/'P1_error_vs_K')
     # P2.
     fig, ax = plt.subplots(figsize=(6.5, 4.3))

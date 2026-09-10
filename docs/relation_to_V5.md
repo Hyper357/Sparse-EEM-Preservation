@@ -55,7 +55,7 @@ Pilot 的任务不是寻找一个更好看的故事，而是检验 reconstructio
 
 ### Case B：结构保持明显早于重建
 
-例如 3 EX 已经有较高的 ranking rho，但 full-EEM reconstruction error 仍较大。
+例如 3 EX 已经有较高的 ranking rho，但 supported-position reconstruction error within the full common-valid EEM domain 仍较大。
 
 这意味着：
 
