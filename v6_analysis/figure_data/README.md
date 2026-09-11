@@ -1,0 +1,1 @@
+All CSVs are derived from frozen V5/pilot outputs. No synthetic repeats or new EX selections were generated. Reconstruction metrics are supported-position metrics; rho is structure-ranking preservation.
