@@ -1,8 +1,22 @@
 # V6 claim boundaries
 
-- Primary endpoint remains V5 structural ranking preservation (`rho_structure`).
-- Full-EEM reconstruction is supplementary validation, not an information-retention percentage.
-- Report reconstruction error only as error over supported positions within the full common-valid EEM domain; pair it with support/unsupported fractions.
-- NAIG and Uniform reconstruction trends are strategy-dependent; do not claim a universal optimal EX count or hardware performance.
-- Environmental associations are supplementary observational background and do not causally correct the EEM workflow.
-- Repeat outputs are contextual QC and are not additional independent main-scan samples.
+## Allowed
+
+- full-EEM-derived inter-sample structural preservation;
+- supported-position reconstruction fidelity;
+- complementary structural and reconstruction endpoints;
+- candidate EX budget for this dataset and fixed evaluation rule;
+- exploratory fixed candidate configuration, explicitly labelled and not externally validated.
+
+## Prohibited
+
+- rho as EEM information percentage;
+- cosine or `1 - RE_F` as information-recovery percentage;
+- optimal algae channels or validated hardware wavelengths;
+- claim that 6 x 4 is already validated;
+- LED or hardware validation;
+- CDOM concentration claims;
+- causal environmental correction of the EEM workflow;
+- universal optimal EX count or generalization beyond this measured dataset;
+- treating technical repeats as independent main samples;
+- treating NRMSE as independent evidence from RE_F.

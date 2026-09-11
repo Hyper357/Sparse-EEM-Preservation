@@ -19,5 +19,16 @@ def test_reconstruction_crosscheck_and_no_redundancy():
     assert not any(c.startswith("nrmse") for c in pub.columns)
 
 def test_required_figure_data_exist():
-    names = ["fig1_eem_examples.csv", "fig3_structural_vs_K.csv", "fig3_strategy_comparison.csv", "fig4_reconstruction_vs_K.csv", "fig4_dual_endpoint_scatter.csv", "fig4_fixed_configuration_comparison.csv", "fig5_repeat_results.csv"]
+    names = ["fig1_eem_examples.csv", "fig3_structural_vs_K.csv", "fig3_strategy_comparison.csv", "fig4_reconstruction_vs_K.csv", "fig4_dual_endpoint_scatter.csv", "fig4_fixed_configuration_comparison.csv", "fig4_random_pareto_K4.csv", "fig4_random_pareto_K6.csv", "fig5_repeat_results.csv"]
     assert all((OUT / "figure_data" / n).exists() for n in names)
+
+def test_handoff_boundaries_are_explicit():
+    freeze = (OUT / "V6_ANALYSIS_FREEZE.md").read_text(encoding="utf-8")
+    nums = (OUT / "V6_NUMBER_SHEET.md").read_text(encoding="utf-8")
+    claims = (OUT / "V6_CLAIM_BOUNDARIES.md").read_text(encoding="utf-8")
+    assert "20 nm minimum spacing" in freeze
+    assert "10 nm and 30 nm spacing" in nums and "SENSITIVITY" in nums
+    for term in ["reconstruction", "dual endpoint", "repeats", "environment"]:
+        assert term.lower() in nums.lower()
+    for forbidden in ["information percentage", "optimal algae channels", "LED", "CDOM"]:
+        assert forbidden.lower() in claims.lower()
